@@ -4429,7 +4429,7 @@ if (!mxG.G.prototype.createImage) {
         this.getE("SvgImg").src = this.svgToDataURL(null);
     };
     mxG.G.prototype.doPng = function () {
-        let img, png, b, r = 2, k = this.k;
+        let img, png, b, r = 0.5, k = this.k;
         b = this.getE("GobanSvg").getBoundingClientRect();
         if (this.gBox == "ShowPng") {
             this.hideGBox("ShowPng");
