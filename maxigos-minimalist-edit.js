@@ -4429,7 +4429,7 @@ if (!mxG.G.prototype.createImage) {
         this.getE("SvgImg").src = this.svgToDataURL(null);
     };
     mxG.G.prototype.doPng = function () {
-        let img, png, b, r = 0.5, k = this.k;
+        let img, png, b, k = this.k;
         b = this.getE("GobanSvg").getBoundingClientRect();
         if (this.gBox == "ShowPng") {
             this.hideGBox("ShowPng");
@@ -4454,10 +4454,10 @@ if (!mxG.G.prototype.createImage) {
             var canvas = document.createElement('canvas'),
                 w = img.width,
                 h = img.height;
-            png.width = w / r;
-            png.height = h / r;
-            canvas.width = w;
-            canvas.height = h;
+            png.width = 1080;
+            png.height = 1080;
+            canvas.width = 1080;
+            canvas.height = 1080;
             // bug Safari?: svg <image> not drawn in the canvas
             //		the first time it is used,
             //		or if Safari is restarted
