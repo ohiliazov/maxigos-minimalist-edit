@@ -4454,11 +4454,10 @@ if (!mxG.G.prototype.createImage) {
             var canvas = document.createElement('canvas'),
                 w = img.width,
                 h = img.height;
-            const r = w / h;
             png.width = w;
-            png.height = h * r;
+            png.height = w;
             canvas.width = w * 3;
-            canvas.height = h * r * 3;
+            canvas.height = w * 2.7;
 
             // bug Safari?: svg <image> not drawn in the canvas
             //		the first time it is used,
@@ -4466,7 +4465,7 @@ if (!mxG.G.prototype.createImage) {
             // use a setTimeout() as a dirty work-around
             setTimeout(function () {
                 newContext = canvas.getContext('2d');
-                newContext.scale(3, r*3);
+                newContext.scale(3, 2.7);
                 newContext.drawImage(img, 0, 0);
                 png.src = canvas.toDataURL("image/png");
             }, 1);
