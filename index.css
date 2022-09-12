@@ -6,26 +6,3 @@ body {
 .scriptNameH1 {
   text-align: center;
 }
-
-nav {
-  display: block;
-  background: #eee;
-  text-align: center;
-}
-
-nav div a {
-  color: #000;
-}
-
-nav div a:first-of-type:before {
-  content: "(";
-}
-
-nav div a:last-of-type:after {
-  content: ")";
-}
-
-nav div {
-  display: inline-block;
-  padding: 0.125em 0.5em;
-}
