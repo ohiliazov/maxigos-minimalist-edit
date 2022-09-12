@@ -4429,7 +4429,7 @@ if (!mxG.G.prototype.createImage) {
         this.getE("SvgImg").src = this.svgToDataURL(null);
     };
     mxG.G.prototype.doPng = function () {
-        let img, png, b, r = 5, k = this.k;
+        let img, png, b, r = 1080, k = this.k;
         b = this.getE("GobanSvg").getBoundingClientRect();
         if (this.gBox == "ShowPng") {
             this.hideGBox("ShowPng");
@@ -4454,10 +4454,11 @@ if (!mxG.G.prototype.createImage) {
             var canvas = document.createElement('canvas'),
                 w = img.width,
                 h = img.height;
-            png.width = w * r;
-            png.height = h * r;
-            canvas.width = w * r;
-            canvas.height = h * r;
+
+            png.width = r;
+            png.height = h / w * r;
+            canvas.width = r;
+            canvas.height = h / w * r;
 
             // bug Safari?: svg <image> not drawn in the canvas
             //		the first time it is used,
@@ -4465,7 +4466,7 @@ if (!mxG.G.prototype.createImage) {
             // use a setTimeout() as a dirty work-around
             setTimeout(function () {
                 let newContext = canvas.getContext('2d');
-                newContext.scale(r, r);
+                newContext.scale(r/h, r/h/w);
                 newContext.drawImage(img, 0, 0);
                 png.src = canvas.toDataURL("image/png");
             }, 1);
