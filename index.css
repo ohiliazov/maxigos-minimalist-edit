@@ -1,8 +1,46 @@
 body {
-  padding: 0;
   margin: 0;
+  padding: 0;
+  font-family: sans-serif;
 }
 
-.scriptNameH1 {
+header, footer {
+  padding: 1em;
   text-align: center;
+  background: rgba(0, 0, 0, 0.1);
+}
+
+header a, footer a {
+  color: #000;
+}
+
+h1.z {
+  margin: 0;
+  padding: 1em;
+  text-align: center;
+}
+
+h2.z {
+  background: #000;
+  color: #fff;
+  margin: 0;
+  padding: 0.25em;
+}
+
+p.z {
+  margin: 0;
+  padding: 0.25em;
+}
+
+div.mxMinimalistTheme {
+  margin-top: 1em;
+  margin-bottom: 1em;
+  padding-left: 1em;
+  padding-right: 1em;
+}
+
+div.mxMinimalistTheme.mxCommentConfig,
+div.mxMinimalistTheme.mxEditConfig,
+div.mxMinimalistTheme.mxTreeConfig {
+  max-width: calc((var(--gobanMaxWidth) * 2) + 2em);
 }
