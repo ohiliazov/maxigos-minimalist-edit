@@ -485,9 +485,9 @@ if (!mxG.S) {
         this.fs = 14;
         this.fw = 400;
         this.sw4text = "";
-        this.sw4mark = "1.125";
-        this.sw4grid = "1.125";
-        this.sw4stone = "1.125";
+        this.sw4mark = "1";
+        this.sw4grid = "1";
+        this.sw4stone = "1";
         this.stoneShadowWidth = 1;
     };
     mxG.S.prototype.star = function (x, y) {
