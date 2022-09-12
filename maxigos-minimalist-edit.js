@@ -4466,7 +4466,7 @@ if (!mxG.G.prototype.createImage) {
             // use a setTimeout() as a dirty work-around
             setTimeout(function () {
                 let newContext = canvas.getContext('2d');
-                newContext.scale(r/h, r/h/w);
+                newContext.scale(r/w, r/h);
                 newContext.drawImage(img, 0, 0);
                 png.src = canvas.toDataURL("image/png");
             }, 1);
