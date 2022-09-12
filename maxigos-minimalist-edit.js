@@ -4454,17 +4454,17 @@ if (!mxG.G.prototype.createImage) {
             var canvas = document.createElement('canvas'),
                 w = img.width,
                 h = img.height;
-            png.width = 1080;
-            png.height = 1080;
-            canvas.width = 1080;
-            canvas.height = 1080;
+            png.width = w;
+            png.height = h;
+            canvas.width = w;
+            canvas.height = h;
             // bug Safari?: svg <image> not drawn in the canvas
             //		the first time it is used,
             //		or if Safari is restarted
             // use a setTimeout() as a dirty work-around
             setTimeout(function () {
                 canvas.getContext('2d').drawImage(img, 0, 0);
-                png.src = canvas.toDataURL("image/png");
+                png.src = canvas.toDataURL("image/png", {pixelRatio: 2});
             }, 1);
         }
         img.src = this.svgToDataURL(b);
