@@ -485,9 +485,9 @@ if (!mxG.S) {
         this.fs = 14;
         this.fw = 400;
         this.sw4text = "";
-        this.sw4mark = "1";
-        this.sw4grid = "1";
-        this.sw4stone = "1";
+        this.sw4mark = "1.125";
+        this.sw4grid = "1.125";
+        this.sw4stone = "1.125";
         this.stoneShadowWidth = 1;
     };
     mxG.S.prototype.star = function (x, y) {
@@ -4363,7 +4363,7 @@ if (!mxG.G.prototype.createHelp) {
 if (!mxG.G.prototype.createImage) {
     mxG.fr("Close", "Fermer");
     mxG.G.prototype.svgToDataURL = function (b) {
-        var e1, e2, a, k, km, r = 8, z, e, s, v, rect1, rect2, mark1, mark2;
+        var e1, e2, a, k, km, r = 2, z, e, s, v, rect1, rect2, mark1, mark2;
         e1 = this.getE("GobanSvg");
         e2 = e1.cloneNode(true);
         // get some css properties and put it in the svg image as attributes
@@ -4388,9 +4388,8 @@ if (!mxG.G.prototype.createImage) {
         // ignore all styles
         if (b) {
             // set width and height to actual svg width and height (png)
-            let vb = e1.getAttribute("viewBox").split(" ");
-            e2.setAttribute("width", vb[2] * r + "");
-            e2.setAttribute("height", vb[3] * r + "");
+            e2.setAttribute("width", b.width * r + "");
+            e2.setAttribute("height", b.height * r + "");
         } else {
             // set width and height to 100% (svg)
             e2.setAttribute("width", "100%");
@@ -4430,7 +4429,7 @@ if (!mxG.G.prototype.createImage) {
         this.getE("SvgImg").src = this.svgToDataURL(null);
     };
     mxG.G.prototype.doPng = function () {
-        let img, png, b, r = 1, k = this.k;
+        let img, png, b, r = 2, k = this.k;
         b = this.getE("GobanSvg").getBoundingClientRect();
         if (this.gBox == "ShowPng") {
             this.hideGBox("ShowPng");
@@ -7508,7 +7507,7 @@ mxG.D[mxG.K].a.initMethod = "first"; // ("first","loop","last") default "first"
 mxG.D[mxG.K].a.pointsNumMax = 19; // (positive integer) default 0
 mxG.D[mxG.K].a.stoneShadowOn = 0; // (0,1) default 0 (require in3dOn=1)
 mxG.D[mxG.K].a.stretching = "0,0,1,1"; // (list) default "0,0,1,1"
-mxG.D[mxG.K].a.gridPadding = 2.5; // (float) default 0
+mxG.D[mxG.K].a.gridPadding = 2; // (float) default 0
 mxG.D[mxG.K].a.gridMargin = 0; // (float) default 0
 mxG.D[mxG.K].a.gobanPadding = 0; // (float) default 0
 mxG.D[mxG.K].a.gobanMargin = 2; // (float) default 0
